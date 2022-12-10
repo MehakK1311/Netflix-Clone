@@ -4,12 +4,24 @@ import Row from "./components/Row";
 import requests from "./requests";
 
 function App() {
-  return <div className="App">
-    <Row title="NETFLIX ORIGINALS" fetchURL={requests.fetchNetfilxOriginals} />
-    <Row title="Trending Now" fetchURL={requests.fetchTrendingNow} />
-  </div>;
-  
-
+  return (
+    <div className="App">
+      <Row
+        title="NETFLIX ORIGINALS"
+        fetchURL={requests.fetchNetfilxOriginals}
+        isLargeRow
+      />
+      <Row title="Trending Now" fetchURL={requests.fetchTrending} />
+      <Row title="Top Rated" fetchURL={requests.fetchTopRated} />
+      <Row title="Comedy Movie" fetchURL={requests.fetchComedyMovie} />
+      <Row title="Horror Movie" fetchURL={requests.fetchHorrorMovie} />
+      <Row title="Romance Movie" fetchURL={requests.fetchRomanceMovie} />
+      <Row
+        title="Documentaries Movie"
+        fetchURL={requests.fetchDocumentariesMovie}
+      />
+    </div>
+  );
 }
 
 export default App;
