@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import instance from "../axios";
 import "../style/row.css";
+
 function Row({ title, fetchURL, isLargeRow }) {
   const [movies, setMovies] = useState([]);
 
+  // fetch data from api
   useEffect(() => {
     async function fetchData() {
       const request = await instance.get(fetchURL);
@@ -15,9 +17,11 @@ function Row({ title, fetchURL, isLargeRow }) {
 
   return (
     <div className="row">
+      {/* heading */}
       <h2>{title}</h2>
 
       <div className="row_posters">
+        {/* poster image */}
         {movies.map((movie) => (
           <img
             className={`row_poster ${isLargeRow && "row_posterLarge"}`}
